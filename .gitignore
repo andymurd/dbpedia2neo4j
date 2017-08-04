@@ -1,5 +1,8 @@
 *.py[cod]
 
+env/
+dbpedia/
+
 tmp/
 downloads/
 

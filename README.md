@@ -16,16 +16,19 @@ Follow these steps to get started:
 
 If you are running on Ubuntu, there are some good instructions at https://www.digitalocean.com/community/tutorials/how-to-install-neo4j-on-an-ubuntu-vps
 
-2. Clone this repo
-
-    git clone 
-
-3. Install Python and Virtualenv
+2. Install Python and Virtualenv
 
     pip install virtualenv
 
+3. Clone this repo
+
+    git clone https://github.com/andymurd/dbpedia2neo4j.git
+    cd dbpedia2neo4j
+
 4. Install the required Python modules
 
+    virtualenv env
+    . ./env/bin/activate
     pip install -r requirements.txt
 
 5. Adjust the configuration to suit your environment
@@ -40,21 +43,17 @@ Now for the core of this repo:
 
     ./bin/dbpedia_download.sh
 
-7. Set up the Neo4J schema
-
-    ./bin/neo4j_schema.py
-
 8. Parse all the downloaded files and output pickle files of nodes and relations
 
-    ./bin/dbpedia_to_pickle.py
+    ./bin/dbpedia_to_pickle.sh
 
 9. Import all the nodes into Neo4J
 
-    ./bin/import_nodes.py
+    ./bin/import_nodes.sh
 
 10. Import all the relations into Neo4J
 
-    ./bin/import_relations.py
+    ./bin/import_relations.sh
 
 11. Finally, add indexes to the schema
 
